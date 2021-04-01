@@ -1,3 +1,7 @@
+:root {
+  font-size: 200%;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -6,21 +10,43 @@ body {
   display: grid;
   place-content: center;
   min-height: 100vh;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 50ch;
   padding: 1rem;
 }
 
-h1 {
-  --houdiniExampleWidth: 200;
-  --houdiniExampleHeight: 30;
-  --houdiniExampleX: 15;
-  --houdiniExampleY: 30;
-  --houdiniExampleColor: rgb(221, 75, 216);
+@property --thickness {
+  syntax: '<length>';
+  initial-value: 1px;
+  inherits: true;
+}
 
-  background: paint(houdiniExample);
-  max-width: 30ch;
-  padding: 2rem;
-  font-size: 3rem;
-  font-weight: bold;
-  font-family: system-ui, sans-serif;
+@property --frequency {
+  syntax: '<length>';
+  initial-value: 16px;
+  inherits: true;
+}
+
+@property --color {
+  syntax: '<color>';
+  initial-value: black;
+  inherits: true;
+}
+
+@property --amplitude {
+  syntax: '<number>';
+  initial-value: 0.5;
+  inherits: true;
+}
+
+.spans span {
+  --amplitude: 0.2;
+  --frequency: 0.25em;
+  --color: black;
+  --thickness: 1px;
+  background: paint(scribble);
+}
+
+.spans span span {
+  visibility: hidden;
 }
