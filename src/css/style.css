@@ -1,5 +1,5 @@
 :root {
-  font-size: 200%;
+  font-size: 260%;
 }
 
 * {
@@ -11,13 +11,12 @@ body {
   place-content: center;
   min-height: 100vh;
   margin: 0 auto;
-  max-width: 50ch;
-  padding: 1rem;
+  max-width: 40ch;
 }
 
 @property --thickness {
   syntax: '<length>';
-  initial-value: 1px;
+  initial-value: 3px;
   inherits: true;
 }
 
@@ -40,10 +39,10 @@ body {
 }
 
 .spans span {
-  --amplitude: 0.2;
+  --amplitude: 0.5;
   --frequency: 0.25em;
   --color: black;
-  --thickness: 1px;
+  --thickness: 2px;
   background: paint(scribble);
 }
 
